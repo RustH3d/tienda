@@ -1,0 +1,221 @@
+/* Globales */
+*::after,
+*::before,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 1200px;
+  font-family: 'Lato', sans-serif; /* Asegúrate de importar la fuente en HTML */
+  color: #333;
+  line-height: 1.6; /* Mejora la legibilidad */
+}
+
+.icon-cart {
+  width: 40px;
+  height: 40px;
+  stroke: #000;
+  transition: stroke 0.3s ease; /* Transición para hover */
+}
+
+.icon-cart:hover {
+  cursor: pointer;
+  stroke: #555; /* Cambio de color al pasar el mouse */
+}
+
+img {
+  max-width: 100%;
+  border-radius: 10px; /* Añadí un borde redondeado global */
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Centrar verticalmente los elementos */
+  padding: 20px 0; /* Ajuste de padding */
+}
+
+.container-icon {
+  position: relative;
+}
+
+.count-products {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%); /* Mejora el centrado */
+  background-color: #000;
+  color: #fff;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 12px; /* Tamaño de fuente consistente */
+  font-weight: bold;
+}
+
+.container-cart-products {
+  position: absolute;
+  top: 60px; /* Ajuste para mayor separación */
+  right: 0;
+  background-color: #fff;
+  width: 400px;
+  z-index: 10; /* Asegura que esté encima de otros elementos */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra más suave */
+  border-radius: 10px;
+}
+
+.cart-product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Línea más suave */
+}
+
+.info-cart-product {
+  display: flex;
+  justify-content: space-between;
+  flex: 0.8;
+  gap: 15px; /* Separación entre elementos */
+}
+
+.titulo-producto-carrito {
+  font-size: 18px; /* Ajuste de tamaño */
+}
+
+.precio-producto-carrito,
+.cantidad-producto-carrito {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.icon-close {
+  width: 25px;
+  height: 25px;
+  transition: stroke 0.3s ease; /* Transición para hover */
+}
+
+.icon-close:hover {
+  stroke: red;
+  cursor: pointer;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between; /* Mejor distribución */
+  align-items: center;
+  padding: 15px 20px;
+  gap: 20px;
+  font-size: 18px; /* Ajuste de tamaño */
+}
+
+.cart-total h3 {
+  font-weight: bold;
+}
+
+.total-pagar {
+  font-weight: bold;
+}
+
+.hidden-cart {
+  display: none;
+}
+
+/* Main */
+.container-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Diseño más adaptable */
+  gap: 20px;
+}
+
+.item {
+  border-radius: 10px;
+  overflow: hidden; /* Evita bordes fuera del contenedor */
+  transition: box-shadow 0.3s ease; /* Suaviza el hover */
+}
+
+.item:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.item img {
+  width: 100%;
+  height: 250px; /* Altura fija para consistencia */
+  object-fit: cover;
+  transition: transform 0.5s ease; /* Mejora el hover */
+}
+
+.item:hover img {
+  transform: scale(1.1); /* Mayor efecto de zoom */
+}
+
+.info-product {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center; /* Centrado del texto */
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #555; /* Color diferenciado */
+}
+
+.info-product button {
+  border: none;
+  background: #000;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.info-product button:hover {
+  background: #333;
+}
+
+/* Estado vacío */
+.cart-empty {
+  padding: 20px;
+  text-align: center;
+  color: #999;
+  font-size: 16px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Botón para limpiar todo */
+.btn-clear-all {
+  border: none;
+  background-color: #000;
+  color: #fff;
+  padding: 15px 0;
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 0 0 10px 10px; /* Ajuste en bordes */
+  font-family: inherit;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.btn-clear-all:hover {
+  background-color: #333;
+  transform: scale(1.02);
+}
